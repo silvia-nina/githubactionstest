@@ -8,14 +8,14 @@ permissions:
   contents: read      # required to checkout the repo
 
 jobs:
-  aws-oida-test:
+  aws-oidc-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository 
         uses: actions/checkout@v4
 
-      - name: Configure ANS credentials via OIDC
+      - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4 
         with:
           role-to-assume: arn:aws:iam::${{ vars.915227021227 }}:role/githubaws 
